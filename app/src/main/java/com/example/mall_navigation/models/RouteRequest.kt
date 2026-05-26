@@ -1,6 +1,6 @@
-package com.example.mall_navigation.Shop
+package com.example.mall_navigation.models
 
-data class Shop(
+class RouteRequest (
     val id: String,
     val name: String,
     val floor: Int,
