@@ -1,6 +1,5 @@
 package com.example.mall_navigation
 import android.os.Bundle
-import android.graphics.Point
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -83,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         floorSpinner.adapter = adapter
         floorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p: AdapterView<*>, v: View?, pos: Int, id: Long) {
+            override fun onItemSelected(p: AdapterView<*>?, v: View?, pos: Int, id: Long) {
                 when (pos) {
                     0 -> viewModel.loadShops()
                     1 -> viewModel.loadShopsByFloor(1)
