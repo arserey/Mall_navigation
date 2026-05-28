@@ -1,5 +1,6 @@
 package com.example.mall_navigation
 import android.os.Bundle
+import android.graphics.Point
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity

@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.server.cors)
     implementation(libs.logback.classic)
+    implementation(project(":app"))
 }
 
 java {
