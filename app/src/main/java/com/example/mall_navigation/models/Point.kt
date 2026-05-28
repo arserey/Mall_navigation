@@ -1,7 +1,7 @@
 package com.example.mall_navigation.models
 
 data class Point(
-    val x: Double,
-    val y: Double,
-    val floor: Int
+    val x: String,   // ← ожидает String
+    val y: String,   // ← ожидает String
+    val floor: Double // ← ожидает Double
 )

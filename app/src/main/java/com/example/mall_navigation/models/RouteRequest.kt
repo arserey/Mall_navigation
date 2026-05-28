@@ -6,5 +6,9 @@ class RouteRequest (
     val floor: Int,
     val x: Double,
     val y: Double,
-    val category: String
+    val category: String,
+    val endX: Double,
+    val startX: Double,
+    val startY: Double,
+    val endY: Double
 )
