@@ -12,15 +12,12 @@ lifecycle = "2.7.0"
 recyclerview = "1.3.2"
 coroutines = "1.7.3"
 retrofit = "2.9.0"
-
 okhttp = "4.12.0"
-kotlin = "1.9.22"
-jetbrainsKotlinJvm = "2.2.10"
+kotlin = "1.9.22"                     # ← единая версия Kotlin
 espresso = "3.5.1"
 ktor = "2.3.10"
 logback = "1.4.14"
-kotlinx-coroutines = "1.7.3"
-kotlinx-serialization = "1.6.3"   # добавлено
+kotlinx-serialization = "1.6.3"
 
 
 
@@ -52,7 +49,6 @@ logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
