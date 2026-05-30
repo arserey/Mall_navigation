@@ -73,7 +73,7 @@ class NavigationViewModel : ViewModel() {
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                val request = RouteRequest(start.x, start.y, end.x, end.y, start.floor)
+                val request = RouteRequest(start.x, start.y, end.x, end.y, start.floor.toDouble())
                 _route.value = api.getRoute(request)
             } catch (e: Exception) {
                 _error.value = "Ошибка маршрута: ${e.message}"

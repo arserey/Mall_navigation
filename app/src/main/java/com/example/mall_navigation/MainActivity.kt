@@ -1,9 +1,10 @@
 package com.example.mall_navigation
+
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mall_navigation.adapters.ShopAdapter
@@ -13,10 +14,6 @@ import com.example.mall_navigation.viewmodel.NavigationViewModel
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.launch
-import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -82,15 +79,17 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         floorSpinner.adapter = adapter
         floorSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p: AdapterView<*>?, v: View?, pos: Int, id: Long) {
-                when (pos) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (position) {
                     0 -> viewModel.loadShops()
                     1 -> viewModel.loadShopsByFloor(1)
                     2 -> viewModel.loadShopsByFloor(2)
                     3 -> viewModel.loadShopsByFloor(3)
                 }
             }
-            override fun onNothingSelected(p: AdapterView<*>) {}
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // ничего не делаем
+            }
         }
     }
 
@@ -100,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.route.observe(this) { route ->
             if (route != null) {
-                routeInfoCard.visibility = android.view.View.VISIBLE
+                routeInfoCard.visibility = View.VISIBLE
                 routeDistanceText.text = "Расстояние: ${String.format("%.1f", route.distance)} м"
                 instructionsText.text = route.instructions.joinToString("\n\n")
             }
