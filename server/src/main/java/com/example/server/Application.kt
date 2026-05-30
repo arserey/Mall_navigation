@@ -1,5 +1,6 @@
 package com.example.server
 
+import com.example.server.models.RouteRequest
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
