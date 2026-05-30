@@ -1,6 +1,9 @@
 package com.example.server
 
-import com.example.models.*
+import com.example.server.models.Point
+import com.example.server.models.RouteRequest
+import com.example.server.models.RouteResponse
+import com.example.server.models.Shop
 
 class NavigationService {
     private val shops = listOf(
